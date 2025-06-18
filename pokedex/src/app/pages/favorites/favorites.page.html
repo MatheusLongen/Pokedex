@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="pokedex-grid">
+    <ion-row>
+      <ion-col size="6" sizeMd="4" sizeLg="3" *ngFor="let poke of pokemons">
+        <ion-card class="poke-card">
+          <div class="poke-id">#{{ poke.id | number:'3.0' }}</div>
+          <img [src]="poke.image" [alt]="poke.name" />
+          <ion-card-header>
+            <ion-card-title>{{ poke.name | titlecase }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="poke-types">
+              <span *ngFor="let type of poke.types" class="type-pill">{{ type }}</span>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

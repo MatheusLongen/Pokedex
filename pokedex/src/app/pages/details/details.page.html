@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ pokemon?.name | titlecase }} #{{ pokemon?.id }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="pokemon" [fullscreen]="true">
+  <div class="pokemon-banner type-{{ pokemon.types[0].type.name }}">
+    <img
+      [src]="showShiny ? pokemon.sprites.front_shiny : pokemon.sprites.front_default"
+      [alt]="pokemon.name"
+    />
+    <ion-toggle [(ngModel)]="showShiny" color="primary">Shiny</ion-toggle>
+  </div>
+
+  <ion-card class="info-card">
+    <ion-card-header>
+      <ion-card-title>{{ pokemon.name | titlecase }}</ion-card-title>
+      <div class="type-badges">
+        <span *ngFor="let type of pokemon.types" [ngClass]="'type-pill type-' + type.type.name">
+          {{ type.type.name }}
+        </span>
+      </div>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="attribute-row">
+        <div><strong>Altura:</strong> {{ pokemon.height / 10 }} m</div>
+        <div><strong>Peso:</strong> {{ pokemon.weight / 10 }} kg</div>
+        <div><strong>XP Base:</strong> {{ pokemon.base_experience }}</div>
+      </div>
+
+      <div class="section">
+        <h3>Habilidades</h3>
+        <p>{{ abilitiesList }}</p>
+      </div>
+
+      <div class="section">
+        <h3>Movimentos iniciais</h3>
+        <p>{{ firstMoves }}</p>
+      </div>
+
+      <div class="section evolution">
+        <h3>Evolução</h3>
+        <div class="evolution-chain" *ngIf="evolutionChain.length > 0">
+          <ng-container *ngFor="let evo of evolutionChain; let i = index">
+            <div class="evolution-item">
+              <img
+                [src]="showShiny ? evo.shinyImage : evo.image"
+                [alt]="evo.name"
+              />
+              <div class="evolution-name">{{ evo.name | titlecase }}</div>
+            </div>
+
+            <div *ngIf="i < evolutionChain.length - 1" class="arrow">→</div>
+          </ng-container>
+        </div>
+        <p *ngIf="evolutionChain.length === 0">Este Pokémon não evolui.</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

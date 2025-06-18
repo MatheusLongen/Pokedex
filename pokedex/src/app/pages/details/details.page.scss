@@ -1,0 +1,116 @@
+.pokemon-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-color: rgba(240, 240, 240, 0.1);
+
+  img {
+    height: 140px;
+    z-index: 2;
+  }
+
+  ion-toggle {
+    margin-top: 8px;
+  }
+}
+
+.info-card {
+  margin-top: -10px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 3;
+}
+
+.type-badges {
+  margin-top: 6px;
+  span {
+    margin-right: 6px;
+  }
+}
+
+.attribute-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.section {
+  margin-top: 16px;
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    color: #ffffff;
+  }
+
+  p {
+    font-size: 14px;
+    color: #d1c9c9;
+  }
+}
+
+.evolution-chain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.evolution-item {
+  text-align: center;
+
+  img {
+    height: 110px;
+    transition: transform 0.3s ease;
+  }
+
+  .evolution-name {
+    font-size: 14px;
+    margin-top: 6px;
+    color: #f1f1f1;
+  }
+}
+
+.arrow {
+  font-size: 24px;
+  color: #ccc;
+  margin: 0 8px;
+}
+
+
+.type-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.type-normal    { background: #A8A878; }
+.type-grass     { background: #78C850; }
+.type-poison    { background: #A040A0; }
+.type-fire      { background: #F08030; }
+.type-water     { background: #6890F0; }
+.type-electric  { background: #F8D030; }
+.type-psychic   { background: #F85888; }
+.type-ice       { background: #98D8D8; }
+.type-rock      { background: #B8A038; }
+.type-ground    { background: #E0C068; }
+.type-bug       { background: #A8B820; }
+.type-flying    { background: #A890F0; }
+.type-fighting  { background: #C03028; }
+.type-dragon    { background: #7038F8; }
+.type-dark      { background: #705848; }
+.type-ghost     { background: #705898; }
+.type-steel     { background: #B8B8D0; }
+.type-fairy     { background: #EE99AC; }

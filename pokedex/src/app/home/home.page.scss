@@ -1,0 +1,154 @@
+ion-content {
+  --background: #444444;
+  padding: 12px;
+}
+
+.pokedex-grid {
+  padding: 8px;
+}
+
+.poke-card {
+  position: relative;
+  border-radius: 12px;
+  background: #948e8ec2;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    width: 100px;
+    margin: 16px auto 8px;
+  }
+
+  ion-card-header {
+    margin-bottom: 4px;
+  }
+
+  ion-card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #222;
+    text-transform: capitalize;
+    margin-bottom: 4px;
+  }
+
+  .poke-id {
+    font-size: 0.85rem;
+    color: #000000;
+    font-weight: 500;
+    margin-top: 8px;
+  }
+
+  .poke-types {
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .favorite-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    color: white;
+    transition: color 0.3s ease;
+
+    &.active {
+      color: gold;
+    }
+
+    ion-icon {
+      font-size: 20px;
+    }
+  }
+
+  .type-pill {
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: inline-block;
+    margin-right: 4px;
+  }
+
+  .type-grass {
+    background-color: #78C850;
+  }
+
+  .type-poison {
+    background-color: #A040A0;
+  }
+
+  .type-fire {
+    background-color: #F08030;
+  }
+
+  .type-water {
+    background-color: #6890F0;
+  }
+
+  .type-electric {
+    background-color: #F8D030;
+  }
+
+  .type-psychic {
+    background-color: #F85888;
+  }
+
+  .type-ice {
+    background-color: #98D8D8;
+  }
+
+  .type-rock {
+    background-color: #B8A038;
+  }
+
+  .type-ground {
+    background-color: #E0C068;
+  }
+
+  .type-bug {
+    background-color: #A8B820;
+  }
+
+  .type-flying {
+    background-color: #A890F0;
+  }
+
+  .type-fighting {
+    background-color: #C03028;
+  }
+
+  .type-dragon {
+    background-color: #7038F8;
+  }
+
+  .type-dark {
+    background-color: #705848;
+  }
+
+  .type-ghost {
+    background-color: #705898;
+  }
+
+  .type-steel {
+    background-color: #B8B8D0;
+  }
+
+  .type-fairy {
+    background-color: #EE99AC;
+  }
+
+  .type-normal {
+    background-color: #A8A878;
+  }
+}
