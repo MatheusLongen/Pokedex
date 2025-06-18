@@ -6,7 +6,7 @@
   height: 200px;
   background-blend-mode: multiply;
   background-size: cover;
-  background-color: rgba(240, 240, 240, 0.1);
+  background-color: rgb(255, 255, 255);
 
   img {
     height: 140px;
@@ -85,6 +85,33 @@
   margin: 0 8px;
 }
 
+.special-button {
+  padding: 2px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.special-icon {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 3px white);
+  transition: transform 0.3s ease;
+}
+
+.special-button.active .special-icon {
+  animation: glowPulse 1.2s infinite ease-in-out;
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px #ffd700);
+}
+
+@keyframes glowPulse {
+  0%   { transform: scale(1.15); filter: drop-shadow(0 0 6px #ffd700); }
+  50%  { transform: scale(1.25); filter: drop-shadow(0 0 10px #ffec8b); }
+  100% { transform: scale(1.15); filter: drop-shadow(0 0 6px #ffd700); }
+}
 
 .type-pill {
   padding: 4px 10px;
