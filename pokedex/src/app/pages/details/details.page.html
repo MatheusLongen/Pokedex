@@ -64,36 +64,23 @@
             [class.active]="showGmax"
             *ngIf="hasGmax"
           >
-            <img src="assets/icon/Gigamax.webp" alt="G-Max" class="special-icon" />
+            <img src="assets/icon/Gigamax.webp" alt="G‑Max" class="special-icon" />
           </ion-button>
         </div>
 
-        <div class="evolution-tree" *ngIf="evolutionTree">
-          <ng-container
-            *ngTemplateOutlet="renderNode; context: { node: evolutionTree }"
-          ></ng-container>
-        </div>
-
-        <ng-template #renderNode let-node>
-          <ng-container *ngIf="node">
-            <div class="evolution-node">
-              <img *ngIf="node?.image" [src]="showShiny ? node.shinyImage : node.image" [alt]="node.name" />
-              <div class="evolution-name">{{ node.name | titlecase }}</div>
+        <div class="evolution-chain" *ngIf="evolutionChain.length > 0">
+          <ng-container *ngFor="let evo of evolutionChain; let i = index">
+            <div class="evolution-item">
+              <img
+                [src]="showShiny ? evo.shinyImage : evo.image"
+                [alt]="evo.name"
+              />
+              <div class="evolution-name">{{ evo.name | titlecase }}</div>
             </div>
-
-            <div *ngIf="node.evolvesTo?.length > 0" class="arrow-group">
-              <div class="arrow">↓</div>
-              <div class="evolution-branch">
-                <ng-container *ngFor="let child of node.evolvesTo">
-                  <ng-container *ngTemplateOutlet="renderNode; context: { node: child }"></ng-container>
-                </ng-container>
-              </div>
-            </div>
+            <div *ngIf="i < evolutionChain.length - 1" class="arrow">→</div>
           </ng-container>
-        </ng-template>
-
-
-        <p *ngIf="!evolutionTree">Este Pokémon não evolui.</p>
+        </div>
+        <p *ngIf="evolutionChain.length === 0">Este Pokémon não evolui.</p>
       </div>
     </ion-card-content>
   </ion-card>
